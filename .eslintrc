@@ -6,7 +6,6 @@
     },
     "extends": "airbnb",
     "rules": {
-      "linebreak-style": 0,
       "brace-style": [2, "1tbs"],
       "camelcase": 0,
       "no-bitwise": 2,
