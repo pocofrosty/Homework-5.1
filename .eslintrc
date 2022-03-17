@@ -4,7 +4,8 @@
       "node": true,
       "es6": true
     },
-    "extends": "airbnb",
+    "extends": ["airbnb",
+    "prettier"],
     "rules": {
       "brace-style": [2, "1tbs"],
       "camelcase": 0,
@@ -31,7 +32,11 @@
       "react/jsx-props-no-spreading": 0,
       "jsx-a11y/label-has-associated-control": 0,
       "jsx-a11y/img-redundant-alt": 0,
-      "linebreak-style": ["error", "windows"]
+      "linebreak-style": ["error", "windows"],
+      "react/function-component-definition": [0, {
+        "namedComponents": "arrow-function"
+      }],
+      "react/button-has-type": 0
     },
     "parserOptions": {
       "ecmaVersion": 2017
