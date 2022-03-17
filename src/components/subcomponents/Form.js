@@ -7,7 +7,6 @@ const Form = () => {
       <input
         onChange={e => {
           setText(e.target.value)
-          console.log(e.target.value)
         }}
       />
       <label> {text}</label>

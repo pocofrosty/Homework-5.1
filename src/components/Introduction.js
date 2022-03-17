@@ -1,5 +1,12 @@
 import React from 'react'
 
-const Introduction = () => <h1> Todo List </h1>
+import Title from './subcomponents/Title'
+
+const Introduction = () => (
+  <Title
+    className="text-center font-bold text-2xl"
+    text="Darren's Personal Blog!"
+  />
+)
 
 export default Introduction

@@ -1,5 +1,5 @@
 import React from 'react'
 
-const Title = ({ text }) => <h1> {text} </h1>
+const Title = ({ text, className }) => <h1 className={className}> {text} </h1>
 
 export default Title

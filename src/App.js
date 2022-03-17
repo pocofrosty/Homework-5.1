@@ -1,14 +1,14 @@
 import React from 'react'
 
-import Title from './components/subcomponents/Title'
-import Form from './components/subcomponents/Form'
+import Introduction from './components/Introduction'
+import BlogPost from './components/BlogPosts'
 
 function App() {
   return (
     <>
-      <h1>Hello world!</h1>
-      <Form />
-      <Title text="test2" />
+      <Introduction />
+      <br />
+      <BlogPost />
     </>
   )
 }
