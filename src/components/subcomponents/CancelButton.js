@@ -1,5 +1,13 @@
 import React from 'react'
 
-const CancelButton = () => <button onClick={() => {}}>test</button>
-
+const CancelButton = ({ setRender, render }) => (
+  <button
+    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    onClick={() => {
+      setRender(!render)
+    }}
+  >
+    Cancel
+  </button>
+)
 export default CancelButton

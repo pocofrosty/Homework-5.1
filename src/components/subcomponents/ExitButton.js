@@ -1,12 +1,14 @@
 import React from 'react'
 
-const AddPostButton = ({ setRender, render }) => (
+const ExitButton = ({ setRender, render }) => (
   <button
     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-    onClick={() => {}}
+    onClick={() => {
+      setRender(!render)
+    }}
   >
-    Add Post
+    X
   </button>
 )
 
-export default AddPostButton
+export default ExitButton
