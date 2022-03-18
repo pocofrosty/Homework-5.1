@@ -1,12 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
 
 import Title from './subcomponents/Title'
+import EditButton from './subcomponents/EditButton'
+import BaseForm from './subcomponents/BaseForm'
 
-const Introduction = () => (
-  <Title
-    className="text-center font-bold text-2xl"
-    text="Darren's Personal Blog!"
-  />
-)
+const Introduction = ({ introduction }) => {
+  const [editMode, setEditMode] = useState(false)
 
-export default Introduction
+  const showEditButton = () => (
+    <EditButton editMode={editMode} setEditMode={setEditMode} />
+  )
+
+  const showForm = () => (
+    <BaseForm
+      editModeStatus={editMode}
+      setEditModeStatus={setEditMode}
+      destination="INTRODUCTION"
+    />
+  )
+
+  return (
+    <>
+      <Title
+        className="text-center font-bold text-2xl"
+        text="Darren's Personal Blog!"
+      />
+      {!editMode ? showEditButton() : null}
+      {editMode ? showForm() : null}
+      {introduction.map(({ text, imageURL }) => (
+        <div key={0}>
+          <img src={imageURL} alt="" />
+          <label> {text} </label>
+        </div>
+      ))}
+      {/* <>
+        <img src={imageURL} alt="" />
+        <label> {text} </label>
+      </> */}
+    </>
+  )
+}
+
+const mapStateToProps = state => ({
+  introduction: state.introduction,
+})
+
+export default connect(mapStateToProps)(Introduction)

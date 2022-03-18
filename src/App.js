@@ -7,12 +7,15 @@ import Post from './components/subcomponents/Post'
 import EditButton from './components/subcomponents/EditButton'
 
 function App() {
+  const [editModeStatus, setEditModeStatus] = useState(false)
   return (
     <>
       <Introduction />
-      <BlogPosts />
+      <BlogPosts
+        editModeStatus={editModeStatus}
+        setEditModeStatus={setEditModeStatus}
+      />
       <br />
-      <BaseForm />
     </>
   )
 }

@@ -1,9 +1,11 @@
 import React from 'react'
 
-const AddPostButton = ({ setRender, render }) => (
+const AddPostButton = ({ editModeStatus, setEditModeStatus }) => (
   <button
     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-    onClick={() => {}}
+    onClick={() => {
+      setEditModeStatus(!editModeStatus)
+    }}
   >
     Add Post
   </button>
