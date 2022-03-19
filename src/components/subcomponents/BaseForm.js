@@ -9,29 +9,44 @@ const BaseForm = ({
   editModeStatus,
   setEditModeStatus,
   destination,
+  postID,
+  currentText = '',
+  currentImage = '',
 }) => {
-  const [imageURL, setImageURL] = useState('')
-  const [description, setDescription] = useState('')
+  const [imageURL, setImageURL] = useState(currentImage)
+  const [description, setDescription] = useState(currentText)
 
   return (
-    <>
-      <TextBox backgroundName="Enter Image" setText={setImageURL} />
+    <div className="grid grid-cols-1 py-2 px-3">
+      <label className="font-mono"> Image </label>
+      <TextBox
+        backgroundName="Enter Image"
+        setText={setImageURL}
+        text={imageURL}
+      />
       <br />
-      <TextBox backgroundName="Enter Description" setText={setDescription} />
+      <label className="font-mono"> Description </label>
+      <TextBox
+        backgroundName="Enter Description"
+        setText={setDescription}
+        text={description}
+      />
       <br />
       <SaveButton
         title={title}
         description={description}
         imageURL={imageURL}
         destination={destination}
+        postID={postID}
         editMode={editModeStatus}
         setEditMode={setEditModeStatus}
       />
+      <br />
       <CancelButton
         editModeStatus={editModeStatus}
         setEditModeStatus={setEditModeStatus}
       />
-    </>
+    </div>
   )
 }
 

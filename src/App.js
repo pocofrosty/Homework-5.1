@@ -8,6 +8,7 @@ function App() {
   return (
     <>
       <Introduction />
+      <br />
       <BlogPosts
         editModeStatus={editModeStatus}
         setEditModeStatus={setEditModeStatus}

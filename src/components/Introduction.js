@@ -13,22 +13,31 @@ const Introduction = ({ introduction }) => {
   )
 
   const showForm = () => (
-    <BaseForm
-      editModeStatus={editMode}
-      setEditModeStatus={setEditMode}
-      destination="INTRODUCTION"
-    />
+    <div className="shadow border-solid border-4 py-2 px-3">
+      <BaseForm
+        editModeStatus={editMode}
+        setEditModeStatus={setEditMode}
+        destination="INTRODUCTION"
+        currentText={introduction[0].text}
+        currentImage={introduction[0].imageURL}
+      />
+    </div>
   )
 
   return (
     <>
-      <Title
-        className="text-center font-bold text-2xl"
-        text="Darren's Personal Blog!"
-      />
-      {editMode ? showForm() : showEditButton()}
+      <div className="grid grid-cols-2 justify-center justify-items-center gap-x-16">
+        <Title
+          className="inline-block text-center font-bold text-2xl"
+          text="Darren's Personal Blog!"
+        />
+        {editMode ? showForm() : showEditButton()}
+      </div>
       {introduction.map(({ text, imageURL }) => (
-        <div key={0}>
+        <div
+          className="grid grid-cols-2 justify-center justify-items-center"
+          key={0}
+        >
           <img src={imageURL} alt="" />
           <label> {text} </label>
         </div>
