@@ -20,7 +20,7 @@ const Post = ({ title, text, imageURL, postID }) => {
       <img src={imageURL} alt="" />
       <label>{text}</label>
       <br />
-      <EditPostButton setRender={setPostMode} render={postMode} />
+      <EditPostButton setPostMode={setPostMode} postMode={postMode} />
     </>
   )
 
@@ -30,7 +30,7 @@ const Post = ({ title, text, imageURL, postID }) => {
     </>
   )
 
-  return <div>{postMode ? showPost() : showEditForm()}</div>
+  return <div>{showPost()}</div>
 }
 
 export default Post

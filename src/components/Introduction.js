@@ -26,8 +26,7 @@ const Introduction = ({ introduction }) => {
         className="text-center font-bold text-2xl"
         text="Darren's Personal Blog!"
       />
-      {!editMode ? showEditButton() : null}
-      {editMode ? showForm() : null}
+      {editMode ? showForm() : showEditButton()}
       {introduction.map(({ text, imageURL }) => (
         <div key={0}>
           <img src={imageURL} alt="" />
