@@ -7,7 +7,7 @@ import Post from './subcomponents/Post'
 import BaseForm from './subcomponents/BaseForm'
 import TextBox from './subcomponents/TextBox'
 
-const BlogPost = ({ postList, editModeStatus, setEditModeStatus }) => {
+const BlogPost = ({ editModeStatus, setEditModeStatus, postList }) => {
   const [title, setTitle] = useState('')
 
   const showForm = () => (

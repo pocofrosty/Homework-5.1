@@ -7,15 +7,15 @@ const SaveButton = ({
   title,
   description,
   imageURL,
-  dispatchAddToPostList,
+  dispatchSendPost,
   destination,
   editMode,
   setEditMode,
 }) => (
   <button
-    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    className="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
     onClick={() => {
-      dispatchAddToPostList(title, description, imageURL, destination)
+      dispatchSendPost(title, description, imageURL, destination)
       setEditMode(!editMode)
     }}
   >
@@ -23,8 +23,8 @@ const SaveButton = ({
   </button>
 )
 
-const mdtp = dispatch => ({
-  dispatchAddToPostList: (title, text, imageURL, destination) => {
+const MapDispatchToProps = dispatch => ({
+  dispatchSendPost: (title, text, imageURL, destination) => {
     if (destination === 'POST_LIST') {
       dispatch(addToPostList(title, text, imageURL))
     } else if (destination === 'INTRODUCTION') {
@@ -33,4 +33,4 @@ const mdtp = dispatch => ({
   },
 })
 
-export default connect(null, mdtp)(SaveButton)
+export default connect(null, MapDispatchToProps)(SaveButton)

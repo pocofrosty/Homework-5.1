@@ -5,7 +5,7 @@ import SaveButton from './SaveButton'
 import TextBox from './TextBox'
 
 const BaseForm = ({
-  title = null,
+  title,
   editModeStatus,
   setEditModeStatus,
   destination,

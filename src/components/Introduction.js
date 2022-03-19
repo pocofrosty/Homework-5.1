@@ -34,10 +34,6 @@ const Introduction = ({ introduction }) => {
           <label> {text} </label>
         </div>
       ))}
-      {/* <>
-        <img src={imageURL} alt="" />
-        <label> {text} </label>
-      </> */}
     </>
   )
 }
